@@ -1,0 +1,267 @@
+{% comment %}
+  FOOTER - Pied de page
+{% endcomment %}
+
+<footer class="footer">
+  <div class="container">
+    
+    <!-- Footer Top -->
+    <div class="footer-top">
+      <div class="grid grid-4">
+        
+        <!-- À propos -->
+        <div class="footer-col">
+          <h3 class="footer-title">🕌 Sakinah</h3>
+          <p class="footer-text">
+            L'Harmonie de Médine dans votre foyer. Tapis de prière Rawdah premium, 
+            parfums authentiques et accessoires spirituels.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="Facebook">👍</a>
+            <a href="#" aria-label="TikTok">🎵</a>
+          </div>
+        </div>
+        
+        <!-- Boutique -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Boutique</h4>
+          <ul class="footer-links">
+            <li><a href="/collections/tapis-individuels">Tapis Individuels</a></li>
+            <li><a href="/collections/tapis-enfants">Tapis Enfants</a></li>
+            <li><a href="/collections/tapis-groupe">Tapis Groupe</a></li>
+            <li><a href="/collections/parfums">Parfums</a></li>
+            <li><a href="/collections/accessoires">Accessoires</a></li>
+            <li><a href="/collections/nouveautes">Nouveautés</a></li>
+          </ul>
+        </div>
+        
+        <!-- Informations -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Informations</h4>
+          <ul class="footer-links">
+            <li><a href="/pages/notre-histoire">À propos</a></li>
+            <li><a href="/pages/contact">Contact</a></li>
+            <li><a href="/pages/livraison">Livraison & Retours</a></li>
+            <li><a href="/pages/faq">FAQ</a></li>
+            <li><a href="/blogs/guides">Blog & Guides</a></li>
+            <li><a href="/pages/programme-fidelite">Programme Fidélité</a></li>
+          </ul>
+        </div>
+        
+        <!-- Légal -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Légal</h4>
+          <ul class="footer-links">
+            <li><a href="/pages/cgv">CGV</a></li>
+            <li><a href="/pages/mentions-legales">Mentions Légales</a></li>
+            <li><a href="/pages/confidentialite">Confidentialité</a></li>
+            <li><a href="/pages/cookies">Cookies</a></li>
+          </ul>
+          
+          <div class="footer-certifications mt-3">
+            <p><strong>✅ Paiement Sécurisé</strong></p>
+            <p>🚚 Livraison Colissimo</p>
+            <p>🔒 Données Protégées (RGPD)</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Newsletter -->
+    <div class="footer-newsletter">
+      <div class="newsletter-content">
+        <h3 class="newsletter-title">📧 Rejoignez la Communauté Sakinah</h3>
+        <p class="newsletter-subtitle">
+          -15% sur votre première commande + conseils spirituels exclusifs
+        </p>
+        <form action="/contact#newsletter" method="post" class="newsletter-form">
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input type="email" 
+                 name="contact[email]" 
+                 placeholder="Votre email" 
+                 required 
+                 class="newsletter-input">
+          <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </form>
+        <p class="newsletter-privacy">
+          🔒 Vos données sont protégées. Désinscription possible à tout moment.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © {{ 'now' | date: '%Y' }} Sakinah - L'Harmonie de Médine. Tous droits réservés.
+      </p>
+      <p class="footer-tagline">
+        🤲 Fait avec 💚 par l'équipe Sakinah
+      </p>
+      <div class="footer-payments">
+        <span>Paiements acceptés :</span>
+        💳 Visa | Mastercard | PayPal | Apple Pay
+      </div>
+    </div>
+    
+  </div>
+</footer>
+
+<style>
+.footer {
+  background-color: var(--noir-nuit);
+  color: var(--gris-serein);
+  padding-top: var(--spacing-2xl);
+}
+
+.footer-top {
+  padding-bottom: var(--spacing-2xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  color: var(--vert-medine);
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--spacing-sm);
+  font-size: 1.5rem;
+  margin-top: var(--spacing-sm);
+}
+
+.footer-social a {
+  transition: transform var(--transition-fast);
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+}
+
+.footer-heading {
+  font-family: var(--font-sous-titre);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--blanc-pur);
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  font-size: 0.875rem;
+  color: var(--gris-serein);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--vert-medine);
+}
+
+.footer-certifications {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  line-height: 1.8;
+}
+
+.footer-newsletter {
+  padding: var(--spacing-2xl) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter-title {
+  font-size: 1.75rem;
+  color: var(--blanc-pur);
+  margin-bottom: var(--spacing-xs);
+}
+
+.newsletter-subtitle {
+  color: var(--or-rawdah);
+  margin-bottom: var(--spacing-md);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: var(--spacing-sm);
+  max-width: 500px;
+  margin: 0 auto var(--spacing-sm);
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--blanc-pur);
+  font-size: 1rem;
+}
+
+.newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-privacy {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.footer-bottom {
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.footer-copyright {
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer-tagline {
+  color: var(--or-rawdah);
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-payments {
+  opacity: 0.7;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .footer-top .grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
+</style>

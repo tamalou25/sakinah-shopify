@@ -1,0 +1,244 @@
+{% comment %}
+  CART DRAWER - Panier latéral
+{% endcomment %}
+
+<div class="cart-overlay" data-cart-close></div>
+
+<aside class="cart-drawer" role="dialog" aria-label="Panier">
+  <div class="cart-drawer-header">
+    <h2 class="cart-drawer-title">🛍️ Votre Panier</h2>
+    <button class="cart-drawer-close" data-cart-close aria-label="Fermer">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  
+  <div class="cart-drawer-items" id="cart-items">
+    {% if cart.item_count > 0 %}
+      {% for item in cart.items %}
+        <div class="cart-item">
+          <img src="{{ item.image | img_url: '100x' }}" alt="{{ item.title }}" class="cart-item-image">
+          <div class="cart-item-details">
+            <h3 class="cart-item-title">{{ item.product.title }}</h3>
+            <p class="cart-item-variant">{{ item.variant.title }}</p>
+            <p class="cart-item-price">{{ item.final_price | money }}</p>
+            <div class="cart-item-quantity">
+              <button class="qty-btn" data-qty-change="{{ item.key }}" data-qty="-1">-</button>
+              <span class="qty-value">{{ item.quantity }}</span>
+              <button class="qty-btn" data-qty-change="{{ item.key }}" data-qty="1">+</button>
+            </div>
+          </div>
+          <button class="cart-item-remove" data-item-remove="{{ item.key }}" aria-label="Supprimer">
+            ×
+          </button>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="cart-empty">
+        <p>🛒 Votre panier est vide</p>
+        <a href="/collections/all" class="btn btn-primary">Continuer mes achats</a>
+      </div>
+    {% endif %}
+  </div>
+  
+  {% if cart.item_count > 0 %}
+    <div class="cart-drawer-footer">
+      <div class="cart-total">
+        <span>Sous-total</span>
+        <span class="cart-total-price">{{ cart.total_price | money }}</span>
+      </div>
+      <p class="cart-shipping-note">🚚 Livraison gratuite dès 79€</p>
+      <a href="{{ routes.cart_url }}" class="btn btn-outline btn-full-width">Voir le panier</a>
+      <button type="submit" name="checkout" class="btn btn-primary btn-full-width">
+        ✅ Commander - {{ cart.total_price | money }}
+      </button>
+    </div>
+  {% endif %}
+</aside>
+
+<style>
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.cart-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--blanc-pur);
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-xl);
+}
+
+.cart-drawer.active {
+  transform: translateX(0);
+}
+
+.cart-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--gris-serein);
+}
+
+.cart-drawer-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.cart-drawer-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  color: var(--noir-nuit);
+}
+
+.cart-drawer-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+}
+
+.cart-item {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--gris-serein);
+  position: relative;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-title {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.cart-item-variant {
+  font-size: 0.875rem;
+  color: var(--gris-serein);
+  margin-bottom: 0.25rem;
+}
+
+.cart-item-price {
+  font-weight: 600;
+  color: var(--vert-medine);
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+}
+
+.qty-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--gris-serein);
+  background-color: var(--blanc-pur);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.qty-btn:hover {
+  border-color: var(--vert-medine);
+  color: var(--vert-medine);
+}
+
+.qty-value {
+  min-width: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.cart-item-remove {
+  position: absolute;
+  top: var(--spacing-md);
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--gris-serein);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.cart-item-remove:hover {
+  color: var(--bordeaux-tapis);
+}
+
+.cart-empty {
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.cart-drawer-footer {
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--gris-serein);
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.cart-total-price {
+  color: var(--vert-medine);
+}
+
+.cart-shipping-note {
+  font-size: 0.875rem;
+  color: var(--gris-serein);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.btn-full-width {
+  width: 100%;
+  margin-bottom: var(--spacing-xs);
+}
+</style>
