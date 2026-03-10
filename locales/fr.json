@@ -1,0 +1,113 @@
+{
+  "general": {
+    "404": {
+      "title": "Page introuvable",
+      "subtext": "La page que vous recherchez n'existe pas. Revenez à l'accueil pour découvrir nos tapis Rawdah."
+    },
+    "search": {
+      "placeholder": "Rechercher un produit...",
+      "title": "Recherche",
+      "no_results": "Aucun résultat pour \"{{ terms }}\". Essayez 'tapis prière' ou 'parfum Médine'."
+    },
+    "newsletter": {
+      "email_placeholder": "Votre email",
+      "submit": "S'inscrire",
+      "confirmation": "Merci ! Vous recevrez nos actualités spirituelles. Baraka à vous !"
+    },
+    "cart": {
+      "title": "Panier",
+      "empty": "Votre panier est vide. Découvrez nos tapis Rawdah !",
+      "subtotal": "Sous-total",
+      "taxes_included": "Taxes incluses",
+      "shipping_at_checkout": "Frais de livraison calculés à l'étape suivante",
+      "checkout": "Commander",
+      "continue_shopping": "Continuer mes achats",
+      "free_shipping_remaining": "Plus que {{ amount }} pour la livraison gratuite !",
+      "free_shipping_reached": "✨ Livraison gratuite débloquée !"
+    },
+    "social": {
+      "share": "Partager",
+      "instagram": "Suivez-nous sur Instagram",
+      "facebook": "Rejoignez-nous sur Facebook"
+    }
+  },
+  "product": {
+    "sold_out": "Épuisé",
+    "unavailable": "Indisponible",
+    "on_sale": "Promo",
+    "add_to_cart": "Ajouter au panier",
+    "quantity": "Quantité",
+    "price": {
+      "from": "À partir de {{ price }}",
+      "regular": "{{ price }}",
+      "sale": "{{ sale_price }} <s>{{ regular_price }}</s>"
+    },
+    "description": "Description",
+    "benefits": "Bénéfices spirituels",
+    "dimensions": "Dimensions",
+    "care_instructions": "Entretien",
+    "in_stock": "En stock - Expédition sous 24h",
+    "preorder": "Pré-commande - Livraison dans 2 semaines"
+  },
+  "collection": {
+    "all_products": "Tous nos produits",
+    "filter": "Filtrer",
+    "sort_by": "Trier par",
+    "products_count": {
+      "one": "{{ count }} produit",
+      "other": "{{ count }} produits"
+    },
+    "categories": {
+      "tapis_individuels": "Tapis Individuels",
+      "tapis_groupe": "Tapis Groupe",
+      "tapis_enfants": "Tapis Enfants",
+      "parfums": "Parfums de Médine",
+      "accessoires": "Accessoires Prière"
+    }
+  },
+  "customer": {
+    "login": {
+      "title": "Connexion",
+      "email": "Email",
+      "password": "Mot de passe",
+      "forgot_password": "Mot de passe oublié ?",
+      "sign_in": "Se connecter",
+      "create_account": "Créer un compte"
+    },
+    "register": {
+      "title": "Créer un compte Rawdine",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "submit": "Créer mon compte"
+    },
+    "account": {
+      "title": "Mon compte",
+      "orders": "Mes commandes",
+      "addresses": "Mes adresses",
+      "logout": "Déconnexion"
+    }
+  },
+  "footer": {
+    "about": "À propos",
+    "contact": "Contact",
+    "shipping": "Livraison",
+    "returns": "Retours",
+    "privacy": "Confidentialité",
+    "terms": "CGV",
+    "legal": "Mentions légales",
+    "payment_methods": "Moyens de paiement acceptés",
+    "copyright": "© {{ year }} Rawdine - La Paix de Médine. Tous droits réservés."
+  },
+  "blog": {
+    "read_more": "Lire la suite",
+    "tags": "Étiquettes",
+    "all_posts": "Tous les articles"
+  },
+  "rawdine": {
+    "tagline": "L'esprit de Médine dans votre foyer",
+    "prayer_space": "Créez votre espace de prière",
+    "authentic_products": "Produits authentiques et de qualité",
+    "customer_satisfaction": "Satisfaction client garantie",
+    "fast_shipping": "Expédition rapide en France"
+  }
+}
