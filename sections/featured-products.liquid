@@ -1,0 +1,160 @@
+{% comment %}
+  PRODUITS MIS EN AVANT
+{% endcomment %}
+
+<section class="section featured-products">
+  <div class="container">
+    
+    <div class="section-header">
+      <h2 class="section-title">{{ section.settings.title }}</h2>
+      {% if section.settings.subtitle != blank %}
+        <p class="section-subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+    
+    <div class="grid grid-{{ section.settings.products_per_row }}">
+      {% for block in section.blocks %}
+        {% assign product = all_products[block.settings.product] %}
+        
+        {% if product != blank %}
+          <div class="card" {{ block.shopify_attributes }}>
+            
+            <!-- Image -->
+            <a href="{{ product.url }}" class="card-image-wrapper">
+              {% if product.featured_image %}
+                <img class="card-image" 
+                     src="{{ product.featured_image | img_url: '600x' }}" 
+                     alt="{{ product.title | escape }}">
+              {% else %}
+                <div class="card-image card-image-placeholder">
+                  {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              {% endif %}
+              
+              <!-- Badges -->
+              {% if product.compare_at_price > product.price %}
+                <span class="badge badge-promo">
+                  -{{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%
+                </span>
+              {% endif %}
+            </a>
+            
+            <!-- Content -->
+            <div class="card-content">
+              <h3 class="card-title">
+                <a href="{{ product.url }}">{{ product.title }}</a>
+              </h3>
+              
+              <div class="card-price">
+                {{ product.price | money }}
+                {% if product.compare_at_price > product.price %}
+                  <span class="card-price-old">{{ product.compare_at_price | money }}</span>
+                {% endif %}
+              </div>
+              
+              <!-- Rating (placeholder) -->
+              <div class="rating">
+                <span class="rating-star">⭐⭐⭐⭐⭐</span>
+                <span class="rating-count">({{ block.settings.review_count }})</span>
+              </div>
+              
+              <!-- Add to cart -->
+              <form data-add-to-cart-form>
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                <button type="submit" class="btn btn-primary btn-small" 
+                        {% unless product.available %}disabled{% endunless %}>
+                  {% if product.available %}
+                    🛍️ Ajouter au panier
+                  {% else %}
+                    🔒 Épuisé
+                  {% endif %}
+                </button>
+              </form>
+            </div>
+            
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    
+    {% if section.settings.button_text != blank %}
+      <div class="text-center mt-4">
+        <a href="{{ section.settings.button_link }}" class="btn btn-outline">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    {% endif %}
+    
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Produits mis en avant",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "🌟 Nos Créations les Plus Aimées"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sous-titre"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Produits par ligne",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texte du bouton",
+      "default": "Voir toute la collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien du bouton"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Produit",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Produit"
+        },
+        {
+          "type": "range",
+          "id": "review_count",
+          "label": "Nombre d'avis",
+          "min": 0,
+          "max": 500,
+          "step": 10,
+          "default": 150
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Produits mis en avant",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" }
+      ]
+    }
+  ]
+}
+{% endschema %}

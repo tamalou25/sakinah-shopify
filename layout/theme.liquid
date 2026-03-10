@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+  
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <link rel="canonical" href="{{ canonical_url }}">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  
+  <!-- Shopify Analytics -->
+  {{ content_for_header }}
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{{ 'favicon.svg' | asset_url }}">
+  
+  <!-- Open Graph -->
+  {% render 'social-meta-tags' %}
+</head>
+
+<body class="template-{{ template.name }}">
+  
+  <!-- Skip to content (accessibility) -->
+  <a href="#main-content" class="sr-only">Passer au contenu</a>
+  
+  <!-- Header -->
+  {% section 'header' %}
+  
+  <!-- Announcement Bar -->
+  {% section 'announcement-bar' %}
+  
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    {{ content_for_layout }}
+  </main>
+  
+  <!-- Footer -->
+  {% section 'footer' %}
+  
+  <!-- Cart Drawer -->
+  {% render 'cart-drawer' %}
+  
+  <!-- Newsletter Popup -->
+  {% render 'newsletter-popup' %}
+  
+  <!-- JavaScript -->
+  <script src="{{ 'custom.js' | asset_url }}" defer></script>
+  
+</body>
+</html>

@@ -1,0 +1,162 @@
+{% comment %}
+  HERO SECTION - Accueil
+{% endcomment %}
+
+<section class="hero" style="background-image: url('{{ section.settings.background_image | img_url: '2048x' }}');">
+  <div class="hero-content">
+    
+    {% if section.settings.show_icon %}
+      <div class="hero-icon">🕌</div>
+    {% endif %}
+    
+    <h1 class="hero-title fade-in">{{ section.settings.title }}</h1>
+    
+    <p class="hero-subtitle fade-in">{{ section.settings.subtitle }}</p>
+    
+    <div class="hero-buttons fade-in">
+      {% if section.settings.button_primary_text != blank %}
+        <a href="{{ section.settings.button_primary_link }}" class="btn btn-primary btn-large">
+          {{ section.settings.button_primary_text }}
+        </a>
+      {% endif %}
+      
+      {% if section.settings.button_secondary_text != blank %}
+        <a href="{{ section.settings.button_secondary_link }}" class="btn btn-outline btn-large">
+          {{ section.settings.button_secondary_text }}
+        </a>
+      {% endif %}
+    </div>
+    
+  </div>
+</section>
+
+<style>
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 166, 81, 0.9) 0%, rgba(0, 122, 61, 0.9) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 var(--spacing-md);
+  color: var(--blanc-pur);
+}
+
+.hero-icon {
+  font-size: 5rem;
+  margin-bottom: var(--spacing-md);
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--blanc-pur);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation-delay: 0.2s;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.95;
+  font-weight: 300;
+  animation-delay: 0.4s;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  animation-delay: 0.6s;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Afficher l'icône",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Sakinah - L'Harmonie de Médine"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": "Transformez votre foyer en sanctuaire de paix"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Image de fond"
+    },
+    {
+      "type": "text",
+      "id": "button_primary_text",
+      "label": "Texte bouton principal",
+      "default": "Découvrir la Collection Rawdah"
+    },
+    {
+      "type": "url",
+      "id": "button_primary_link",
+      "label": "Lien bouton principal"
+    },
+    {
+      "type": "text",
+      "id": "button_secondary_text",
+      "label": "Texte bouton secondaire",
+      "default": "Offrir un Coffret 🎁"
+    },
+    {
+      "type": "url",
+      "id": "button_secondary_link",
+      "label": "Lien bouton secondaire"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}
