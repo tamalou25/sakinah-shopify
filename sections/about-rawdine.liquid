@@ -1,0 +1,145 @@
+<div class="about-section" style="padding: 80px 20px; background-color: #FDFCF8;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;" class="about-grid">
+      
+      <div class="about-image">
+        {% if section.settings.image %}
+          <img 
+            src="{{ section.settings.image | img_url: '800x600', crop: 'center' }}" 
+            alt="Rawdine - La Paix de Médine" 
+            style="width: 100%; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.15);"
+          >
+        {% else %}
+          <div style="width: 100%; padding-top: 75%; background: linear-gradient(135deg, #00A651, #D4AF37); border-radius: 16px; position: relative;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+              <div style="font-size: 80px; margin-bottom: 16px;">🕌</div>
+              <p style="font-size: 24px; font-weight: 600;">Rawdine</p>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="about-content">
+        <div style="display: inline-block; padding: 8px 16px; background: rgba(0, 166, 81, 0.1); color: #00A651; border-radius: 20px; font-weight: 600; font-size: 14px; margin-bottom: 20px;">
+          {{ section.settings.badge | default: "✨ Notre Histoire" }}
+        </div>
+
+        <h2 style="font-size: 42px; color: #2C2C2C; margin-bottom: 24px; font-weight: 700; line-height: 1.2;">
+          {{ section.settings.title | default: "L'Esprit de Médine dans Votre Foyer" }}
+        </h2>
+
+        <div style="font-size: 18px; color: #666; line-height: 1.8; margin-bottom: 32px;">
+          {{ section.settings.description | default: "<p>Rawdine est née d'une passion profonde pour l'authenticité spirituelle. Inspirés par la sérénité de la mosquée du Prophète ﷺ à Médine, nous créons des espaces de prière paisibles pour chaque foyer musulman.</p><p><strong>Notre mission :</strong> Offrir des produits spirituels de haute qualité honorant la tradition islamique avec le confort moderne.</p>" }}
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;">
+          <div style="padding: 20px; background: white; border-radius: 12px; border-left: 4px solid #00A651;">
+            <div style="font-size: 32px; font-weight: 700; color: #00A651; margin-bottom: 8px;">
+              {{ section.settings.stat_1_number | default: "2000+" }}
+            </div>
+            <p style="color: #666; margin: 0; font-size: 15px;">
+              {{ section.settings.stat_1_text | default: "Clients satisfaits" }}
+            </p>
+          </div>
+
+          <div style="padding: 20px; background: white; border-radius: 12px; border-left: 4px solid #D4AF37;">
+            <div style="font-size: 32px; font-weight: 700; color: #D4AF37; margin-bottom: 8px;">
+              {{ section.settings.stat_2_number | default: "4.9/5" }}
+            </div>
+            <p style="color: #666; margin: 0; font-size: 15px;">
+              {{ section.settings.stat_2_text | default: "Note moyenne" }}
+            </p>
+          </div>
+        </div>
+
+        {% if section.settings.button_text != blank %}
+          <a href="{{ section.settings.button_link }}" style="display: inline-block; padding: 16px 40px; background: #00A651; color: white; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s; font-size: 16px;" onmouseover="this.style.background='#00854A'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#00A651'; this.style.transform='translateY(0)'">
+            {{ section.settings.button_text }} →
+          </a>
+        {% endif %}
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "À Propos Rawdine",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image (mosquée Médine ou tapis)"
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge",
+      "default": "✨ Notre Histoire"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "L'Esprit de Médine dans Votre Foyer"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_number",
+      "label": "Statistique 1 (nombre)",
+      "default": "2000+"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_text",
+      "label": "Statistique 1 (texte)",
+      "default": "Clients satisfaits"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_number",
+      "label": "Statistique 2 (nombre)",
+      "default": "4.9/5"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_text",
+      "label": "Statistique 2 (texte)",
+      "default": "Note moyenne"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texte bouton",
+      "default": "Découvrir nos produits"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Lien bouton"
+    }
+  ],
+  "presets": [
+    {
+      "name": "À Propos Rawdine"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,102 @@
+<div class="newsletter-section" style="background: linear-gradient(135deg, {{ section.settings.bg_color_1 }} 0%, {{ section.settings.bg_color_2 }} 100%); padding: 60px 20px; text-align: center;">
+  <div class="container" style="max-width: 600px; margin: 0 auto;">
+    {% if section.settings.icon %}
+      <div class="newsletter-icon" style="font-size: 48px; margin-bottom: 20px;">
+        {{ section.settings.icon }}
+      </div>
+    {% endif %}
+    
+    <h2 style="color: {{ section.settings.text_color }}; font-size: 32px; margin-bottom: 16px; font-weight: 600;">
+      {{ section.settings.title | default: "Rejoignez la communauté Rawdine" }}
+    </h2>
+    
+    <p style="color: {{ section.settings.text_color }}; opacity: 0.9; font-size: 18px; margin-bottom: 30px; line-height: 1.6;">
+      {{ section.settings.description | default: "Recevez nos nouveautés, promotions exclusives et conseils spirituels chaque mois. Baraka à vous !" }}
+    </p>
+
+    {% form 'customer', class: 'newsletter-form' %}
+      <div style="display: flex; gap: 12px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+        <input 
+          type="email" 
+          name="contact[email]" 
+          placeholder="{{ 'general.newsletter.email_placeholder' | t }}" 
+          required
+          style="flex: 1; min-width: 250px; padding: 16px 20px; border: 2px solid rgba(255,255,255,0.3); border-radius: 8px; font-size: 16px; background: rgba(255,255,255,0.9);"
+        >
+        <button 
+          type="submit" 
+          style="padding: 16px 32px; background: {{ section.settings.button_color }}; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px; transition: transform 0.2s;"
+          onmouseover="this.style.transform='scale(1.05)'" 
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          {{ 'general.newsletter.submit' | t }}
+        </button>
+      </div>
+      
+      {% if form.posted_successfully? %}
+        <p style="color: {{ section.settings.text_color }}; margin-top: 20px; font-weight: 500;">
+          ✨ {{ 'general.newsletter.confirmation' | t }}
+        </p>
+      {% endif %}
+    {% endform %}
+
+    <p style="color: {{ section.settings.text_color }}; opacity: 0.7; font-size: 14px; margin-top: 16px;">
+      🔒 Vos données sont sécurisées. Pas de spam, promis !
+    </p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter Rawdine",
+  "settings": [
+    {
+      "type": "text",
+      "id": "icon",
+      "label": "Icône (emoji)",
+      "default": "🕌"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Rejoignez la communauté Rawdine"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Recevez nos nouveautés, promotions exclusives et conseils spirituels chaque mois. Baraka à vous !"
+    },
+    {
+      "type": "color",
+      "id": "bg_color_1",
+      "label": "Couleur fond (début gradient)",
+      "default": "#00A651"
+    },
+    {
+      "type": "color",
+      "id": "bg_color_2",
+      "label": "Couleur fond (fin gradient)",
+      "default": "#00854A"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur texte",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Couleur bouton",
+      "default": "#D4AF37"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter Rawdine"
+    }
+  ]
+}
+{% endschema %}
