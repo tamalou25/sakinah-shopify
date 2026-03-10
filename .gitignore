@@ -1,0 +1,23 @@
+# Shopify
+config/settings_data.json
+config.yml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
