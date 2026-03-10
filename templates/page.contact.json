@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "main": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Contactez-nous",
+        "subheading": "Une question sur nos tapis Rawdah ou nos parfums ? Nous sommes là pour vous accompagner. Salam alaykoum !"
+      }
+    },
+    "contact-info": {
+      "type": "multicolumn",
+      "blocks": [
+        {
+          "type": "column",
+          "settings": {
+            "title": "📧 Email",
+            "text": "contact@rawdine.fr<br>Réponse sous 24h"
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "title": "📦 Livraison",
+            "text": "France métropolitaine<br>Gratuite dès 100€"
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "title": "⏱️ Horaires",
+            "text": "Lun-Ven : 9h-18h<br>Sam : 10h-16h"
+          }
+        }
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "contact-info"
+  ]
+}

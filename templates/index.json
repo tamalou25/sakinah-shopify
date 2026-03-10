@@ -1,0 +1,74 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "title": "Créez votre espace de prière à l'esprit de Médine",
+        "subtitle": "Tapis Rawdah authentiques et parfums de Médine pour une prière sereine",
+        "button_text": "Découvrir nos tapis",
+        "button_link": "/collections/tapis-rawdah"
+      }
+    },
+    "featured-products": {
+      "type": "featured-products",
+      "settings": {
+        "title": "🌟 Nos Best-Sellers Rawdah",
+        "collection": "best-sellers",
+        "products_to_show": 4
+      }
+    },
+    "promo-banner": {
+      "type": "announcement-bar",
+      "settings": {
+        "text": "✨ PROMO : -30% sur les tapis groupe Rawdah jusqu'au 31 mars ! Code : GROUPE30",
+        "color_scheme": "accent"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "author": "Fatima L.",
+            "location": "Paris",
+            "rating": 5,
+            "text": "Mon tapis Rawdah est magnifique ! La qualité est exceptionnelle et l'esprit de Médine transparaît. Mes prières sont plus sereines. Baraka Allah fikoum !"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "author": "Mohammed K.",
+            "location": "Lyon",
+            "rating": 5,
+            "text": "Commande reçue rapidement. Le parfum Rawdat Al-Madinah est envoûtant, j'en mets avant chaque prière. Produits authentiques, je recommande !"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "author": "Aïcha M.",
+            "location": "Marseille",
+            "rating": 5,
+            "text": "J'ai acheté 3 tapis enfants pour mes petits. Ils adorent ! Design ludique et qualité au top. Livraison gratuite en plus. Jazakoum Allahu khayran."
+          }
+        }
+      ]
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "title": "🕌 Rejoignez la communauté Rawdine",
+        "text": "Recevez nos nouveautés, promotions exclusives et conseils spirituels chaque mois. Baraka à vous !"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "promo-banner",
+    "featured-products",
+    "testimonials",
+    "newsletter"
+  ]
+}
