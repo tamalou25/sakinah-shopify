@@ -1,0 +1,53 @@
+{
+  "current": {
+    "color_primary": "#00A651",
+    "color_secondary": "#D4AF37",
+    "color_accent": "#000000",
+    "color_background": "#FDFCF8",
+    "color_text": "#2C2C2C",
+    "type_header_font": "montserrat_n6",
+    "type_body_font": "open_sans_n4",
+    "hero_title": "Créez votre espace de prière à l'esprit de Médine",
+    "hero_subtitle": "Tapis Rawdah authentiques et parfums de Médine pour une prière sereine",
+    "free_shipping_enabled": true,
+    "free_shipping_threshold": 100,
+    "shipping_message": "Livraison gratuite en France métropolitaine dès 100€",
+    "newsletter_title": "Rejoignez la communauté Rawdine",
+    "newsletter_text": "Recevez nos nouveautés, promotions exclusives et conseils spirituels chaque mois. Baraka à vous !",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_width": 150,
+          "menu": "main-menu"
+        }
+      },
+      "hero": {
+        "type": "hero",
+        "settings": {}
+      },
+      "featured-products": {
+        "type": "featured-products",
+        "settings": {
+          "title": "Nos Best-Sellers Rawdah",
+          "collection": "tapis-rawdah"
+        }
+      },
+      "newsletter": {
+        "type": "newsletter",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "show_payment_icons": true
+        }
+      }
+    },
+    "content_for_index": [
+      "hero",
+      "featured-products",
+      "newsletter"
+    ]
+  }
+}
