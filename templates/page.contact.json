@@ -8,30 +8,10 @@
       }
     },
     "contact-info": {
-      "type": "multicolumn",
-      "blocks": [
-        {
-          "type": "column",
-          "settings": {
-            "title": "📧 Email",
-            "text": "contact@rawdine.fr<br>Réponse sous 24h"
-          }
-        },
-        {
-          "type": "column",
-          "settings": {
-            "title": "📦 Livraison",
-            "text": "France métropolitaine<br>Gratuite dès 100€"
-          }
-        },
-        {
-          "type": "column",
-          "settings": {
-            "title": "⏱️ Horaires",
-            "text": "Lun-Ven : 9h-18h<br>Sam : 10h-16h"
-          }
-        }
-      ]
+      "type": "rich-text",
+      "settings": {
+        "content": "<p><strong>📧 Email</strong><br>contact@rawdine.fr — Réponse sous 24h</p><p><strong>📦 Livraison</strong><br>France métropolitaine — Gratuite dès 100€</p><p><strong>⏱️ Horaires</strong><br>Lun-Ven : 9h-18h | Sam : 10h-16h</p>"
+      }
     }
   },
   "order": [

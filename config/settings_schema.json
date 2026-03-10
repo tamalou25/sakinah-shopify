@@ -1,7 +1,7 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Sakinah - La Paix de Médine",
+    "theme_name": "Sakinah Medine",
     "theme_version": "1.0.0",
     "theme_author": "Rawdine",
     "theme_documentation_url": "https://github.com/tamalou25/sakinah-shopify",
@@ -118,7 +118,7 @@
       {
         "type": "number",
         "id": "free_shipping_threshold",
-        "label": "Montant minimum pour livraison gratuite (€)",
+        "label": "Montant minimum livraison gratuite (€)",
         "default": 100
       },
       {
