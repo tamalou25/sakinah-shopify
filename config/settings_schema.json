@@ -1,0 +1,149 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Sakinah - La Paix de Médine",
+    "theme_version": "1.0.0",
+    "theme_author": "Rawdine",
+    "theme_documentation_url": "https://github.com/tamalou25/sakinah-shopify",
+    "theme_support_url": "https://github.com/tamalou25/sakinah-shopify/issues"
+  },
+  {
+    "name": "Couleurs Rawdine",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Identité visuelle Médine"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Vert Médine (Principal)",
+        "default": "#00A651"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Or Rawdah",
+        "default": "#D4AF37"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Noir élégant",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Fond crème spirituel",
+        "default": "#FDFCF8"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Texte principal",
+        "default": "#2C2C2C"
+      }
+    ]
+  },
+  {
+    "name": "Typographie",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "label": "Titre (Montserrat recommandé)",
+        "default": "montserrat_n6"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "label": "Corps de texte (Open Sans)",
+        "default": "open_sans_n4"
+      }
+    ]
+  },
+  {
+    "name": "Hero Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "hero_title",
+        "label": "Titre principal",
+        "default": "Créez votre espace de prière à l'esprit de Médine"
+      },
+      {
+        "type": "textarea",
+        "id": "hero_subtitle",
+        "label": "Sous-titre",
+        "default": "Tapis Rawdah authentiques et parfums de Médine pour une prière sereine"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Image hero (mosquée Médine)"
+      }
+    ]
+  },
+  {
+    "name": "Réseaux sociaux",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "URL Instagram",
+        "info": "Ex: https://instagram.com/rawdine"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "URL Facebook"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok",
+        "label": "URL TikTok"
+      }
+    ]
+  },
+  {
+    "name": "Livraison France",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "free_shipping_enabled",
+        "label": "Activer livraison gratuite",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Montant minimum pour livraison gratuite (€)",
+        "default": 100
+      },
+      {
+        "type": "text",
+        "id": "shipping_message",
+        "label": "Message livraison",
+        "default": "Livraison gratuite en France métropolitaine dès 100€"
+      }
+    ]
+  },
+  {
+    "name": "Newsletter",
+    "settings": [
+      {
+        "type": "text",
+        "id": "newsletter_title",
+        "label": "Titre newsletter",
+        "default": "Rejoignez la communauté Rawdine"
+      },
+      {
+        "type": "textarea",
+        "id": "newsletter_text",
+        "label": "Texte description",
+        "default": "Recevez nos nouveautés, promotions exclusives et conseils spirituels chaque mois. Baraka à vous !"
+      }
+    ]
+  }
+]
