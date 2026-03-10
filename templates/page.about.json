@@ -1,59 +1,9 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
+      "type": "about-rawdine",
       "settings": {}
-    },
-    "rawdine-story": {
-      "type": "rich-text",
-      "blocks": [
-        {
-          "type": "heading",
-          "settings": {
-            "heading": "🕌 Notre Histoire - L'Esprit de Médine"
-          }
-        },
-        {
-          "type": "text",
-          "settings": {
-            "text": "<p>Rawdine est née d'une passion profonde pour l'authenticité spirituelle et la qualité. Inspirés par la sérénité de la mosquée du Prophète ﷺ à Médine, nous avons créé cette marque pour permettre à chaque musulman de recréer un espace de prière paisible dans son foyer.</p><p><strong>Notre mission :</strong> Offrir des produits spirituels de haute qualité qui honorent la tradition islamique tout en respectant les standards de confort moderne.</p>"
-          }
-        }
-      ]
-    },
-    "values": {
-      "type": "multicolumn",
-      "blocks": [
-        {
-          "type": "column",
-          "settings": {
-            "title": "🌟 Authenticité",
-            "text": "Produits inspirés de Médine avec matériaux premium et designs respectueux de la tradition."
-          }
-        },
-        {
-          "type": "column",
-          "settings": {
-            "title": "✅ Qualité",
-            "text": "Tapis Rawdah tissés avec soin, testés pour résister aux lavages et à l'usage quotidien."
-          }
-        },
-        {
-          "type": "column",
-          "settings": {
-            "title": "🤝 Communauté",
-            "text": "Une famille Rawdine engagée, partageant valeurs spirituelles et satisfaction client."
-          }
-        }
-      ],
-      "settings": {
-        "title": "Nos Valeurs"
-      }
     }
   },
-  "order": [
-    "main",
-    "rawdine-story",
-    "values"
-  ]
+  "order": ["main"]
 }

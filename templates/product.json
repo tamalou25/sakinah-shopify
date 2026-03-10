@@ -1,67 +1,9 @@
 {
   "sections": {
     "main": {
-      "type": "main-product",
-      "blocks": [
-        {
-          "type": "title",
-          "settings": {}
-        },
-        {
-          "type": "price",
-          "settings": {}
-        },
-        {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
-          }
-        },
-        {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true
-          }
-        },
-        {
-          "type": "description",
-          "settings": {}
-        },
-        {
-          "type": "share",
-          "settings": {
-            "share_label": "Partager ce produit spirituel"
-          }
-        }
-      ],
-      "settings": {
-        "enable_sticky_info": true,
-        "media_position": "left",
-        "gallery_layout": "thumbnail_slider",
-        "enable_video_looping": true
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "title": "Complétez votre espace de prière",
-        "products_to_show": 4
-      }
-    },
-    "reviews": {
-      "type": "product-reviews",
-      "settings": {
-        "title": "Avis de nos frères et sœurs"
-      }
+      "type": "featured-products",
+      "settings": {}
     }
   },
-  "order": [
-    "main",
-    "related-products",
-    "reviews"
-  ]
+  "order": ["main"]
 }
